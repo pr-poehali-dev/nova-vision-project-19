@@ -66,7 +66,7 @@ def handler(event: dict, context) -> dict:
             "Content-Type": "application/json",
         },
         json={
-            "model": "mistralai/mistral-7b-instruct:free",
+            "model": "meta-llama/llama-3.2-3b-instruct:free",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.8,
             "max_tokens": 1000,
