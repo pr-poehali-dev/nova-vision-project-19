@@ -66,7 +66,7 @@ def handler(event: dict, context) -> dict:
             "Content-Type": "application/json",
         },
         json={
-            "model": "deepseek/deepseek-r1:free",
+            "model": "deepseek/deepseek-chat-v3-0324:free",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.8,
             "max_tokens": 1000,
