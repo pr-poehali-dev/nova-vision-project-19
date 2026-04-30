@@ -37,7 +37,7 @@ export function Booking() {
     setLoading(true)
     setWorkout(null)
     try {
-      const res = await fetch("https://workout-gen.poehali.dev/generate", {
+      const res = await fetch("https://functions.poehali.dev/4175632d-fba5-4ea4-a6b5-c347f908d042", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
