@@ -73,6 +73,8 @@ def handler(event: dict, context) -> dict:
         },
         timeout=25,
     )
+    print(f"OpenRouter status: {response.status_code}")
+    print(f"OpenRouter response: {response.text[:500]}")
     response.raise_for_status()
     workout = response.json()["choices"][0]["message"]["content"]
 
