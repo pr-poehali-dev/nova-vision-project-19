@@ -58,8 +58,9 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70">
+        <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70 space-y-2">
           <p>&copy; 2025 Мы — Будущее Поколение Страны. Все права защищены.</p>
+          <p>Разработчики: Назарова Евгения, Шапкина Мария, Чугунова Дарья, Ерохин Егор, Степанов Андрей</p>
         </div>
       </div>
     </footer>
