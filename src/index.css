@@ -7,10 +7,10 @@
 @layer base {
   :root {
     /* VA Landing Page color palette - purple accents */
-    --background: 36 33% 95%;
+    --background: 120 30% 94%;
     --foreground: 0 0% 9%;
 
-    --card: 36 25% 91%;
+    --card: 120 20% 89%;
     --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
