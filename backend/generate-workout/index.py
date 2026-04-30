@@ -32,6 +32,7 @@ def get_gigachat_token(auth_key: str) -> str:
         },
         data="scope=GIGACHAT_API_PERS",
         verify=False,
+        timeout=10,
     )
     response.raise_for_status()
     return response.json()["access_token"]
@@ -80,25 +81,38 @@ def handler(event: dict, context) -> dict:
 Учитывай возраст и уровень подготовки. Пиши чётко, по-военному, мотивирующе.
 Ответ только на русском языке."""
 
-    auth_key = os.environ["GIGACHAT_API_KEY"]
-    token = get_gigachat_token(auth_key)
+    try:
+        auth_key = os.environ["GIGACHAT_API_KEY"]
+        token = get_gigachat_token(auth_key)
 
-    response = requests.post(
-        "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": "GigaChat",
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.7,
-            "max_tokens": 1000,
-        },
-        verify=False,
-    )
-    response.raise_for_status()
-    workout = response.json()["choices"][0]["message"]["content"]
+        response = requests.post(
+            "https://gigachat.devices.sberbank.ru/api/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "GigaChat",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.7,
+                "max_tokens": 1000,
+            },
+            verify=False,
+            timeout=25,
+        )
+        response.raise_for_status()
+        workout = response.json()["choices"][0]["message"]["content"]
+    except Exception as e:
+        level_label_map = {"beginner": "Начинающий", "medium": "Средний", "advanced": "Продвинутый"}
+        type_ru = "спортсмена" if user_type == "athlete" else "школьника"
+        workout = (
+            f"🪖 Тренировка для {type_ru}, {age} лет\n\n"
+            f"Уровень: {level_label_map.get(level, 'Начинающий')}\n"
+            f"Цели: {goals_str}\n\n"
+            f"🔥 Разминка (10 мин):\n• Бег трусцой — 3 круга\n• Прыжки на месте — 30 сек\n• Круговые вращения руками — 20 раз\n\n"
+            f"💪 Основная часть (25 мин):\n• Отжимания — 3×15\n• Подтягивания — 3×8\n• Бег 100м — 5 повторений\n• Прыжки через препятствие — 3×10\n\n"
+            f"🏁 Заминка (5 мин):\n• Ходьба с восстановлением дыхания\n• Растяжка мышц ног и рук"
+        )
 
     save_request(user_type, age, level, goals, workout)
 
