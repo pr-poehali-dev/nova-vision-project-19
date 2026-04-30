@@ -103,6 +103,7 @@ def handler(event: dict, context) -> dict:
         response.raise_for_status()
         workout = response.json()["choices"][0]["message"]["content"]
     except Exception as e:
+        print(f"GigaChat error: {type(e).__name__}: {e}")
         level_label_map = {"beginner": "Начинающий", "medium": "Средний", "advanced": "Продвинутый"}
         type_ru = "спортсмена" if user_type == "athlete" else "школьника"
         workout = (
