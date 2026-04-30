@@ -2,6 +2,7 @@ import { Header } from "@/components/Header"
 import { Hero } from "@/components/Hero"
 import { AboutTrainer } from "@/components/AboutTrainer"
 import { Benefits } from "@/components/Benefits"
+import { PhotoGallery } from "@/components/PhotoGallery"
 import { Booking } from "@/components/Booking"
 import { Testimonials } from "@/components/Testimonials"
 import { FAQ } from "@/components/FAQ"
@@ -15,6 +16,7 @@ export default function Index() {
       <Hero />
       <AboutTrainer />
       <Benefits />
+      <PhotoGallery />
       <Booking />
       <Testimonials />
       <FAQ />

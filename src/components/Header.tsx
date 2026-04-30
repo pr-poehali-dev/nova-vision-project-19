@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 
 export function Header() {
   const handleGetStarted = () => {
@@ -11,19 +12,19 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-            <span className="text-accent-foreground font-bold text-lg">E</span>
+            <Icon name="Shield" size={18} className="text-accent-foreground" />
           </div>
-          <span className="font-semibold text-foreground">Elevate VA Academy</span>
+          <span className="font-semibold text-foreground">БоевойРезерв</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition">
-            О нас
+            О платформе
           </a>
           <a href="#benefits" className="text-sm text-muted-foreground hover:text-foreground transition">
             Преимущества
           </a>
           <a href="#booking" className="text-sm text-muted-foreground hover:text-foreground transition">
-            Записаться
+            Получить тренировку
           </a>
           <a href="#testimonials" className="text-sm text-muted-foreground hover:text-foreground transition">
             Отзывы
