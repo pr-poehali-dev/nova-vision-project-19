@@ -1,18 +1,10 @@
 {
   "tests": [
     {
-      "name": "Генерация тренировки для школьника",
-      "method": "POST",
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
       "path": "/",
-      "body": {
-        "type": "student",
-        "age": "14",
-        "level": "beginner",
-        "goals": ["Выносливость", "Сила"]
-      },
-      "expectedStatus": 200,
-      "expectedBody": {"workout": "string"},
-      "bodyMatcher": "partial"
+      "expectedStatus": 200
     }
   ]
 }

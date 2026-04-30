@@ -3,8 +3,21 @@ import os
 import uuid
 import requests
 import urllib3
+import psycopg2
 
 urllib3.disable_warnings()
+
+
+def save_request(user_type, age, level, goals, workout):
+    conn = psycopg2.connect(os.environ["DATABASE_URL"])
+    cur = conn.cursor()
+    cur.execute(
+        "INSERT INTO workout_requests (user_type, age, level, goals, workout_result) VALUES (%s, %s, %s, %s, %s)",
+        (user_type, age, level, goals, workout),
+    )
+    conn.commit()
+    cur.close()
+    conn.close()
 
 
 def get_gigachat_token(auth_key: str) -> str:
@@ -86,6 +99,8 @@ def handler(event: dict, context) -> dict:
     )
     response.raise_for_status()
     workout = response.json()["choices"][0]["message"]["content"]
+
+    save_request(user_type, age, level, goals, workout)
 
     return {
         "statusCode": 200,
