@@ -66,7 +66,7 @@ def handler(event: dict, context) -> dict:
             "Content-Type": "application/json",
         },
         json={
-            "model": "google/gemma-3-27b-it:free",
+            "model": "mistralai/mistral-small-3.2-24b-instruct:free",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.8,
             "max_tokens": 1000,
