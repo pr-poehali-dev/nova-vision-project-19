@@ -58,9 +58,21 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70 space-y-2">
-          <p>&copy; 2025 Мы — Будущее Поколение Страны. Все права защищены.</p>
-          <p>Разработчики: Назарова Евгения, Шапкина Мария, Чугунова Дарья, Ерохин Егор, Степанов Андрей</p>
+        <div className="border-t border-background/20 pt-8 space-y-6">
+          <div className="flex flex-col items-center gap-4">
+            <div className="bg-white rounded-xl px-6 py-4 flex items-center gap-4">
+              <img
+                src="https://cdn.poehali.dev/projects/8b607951-b007-4370-a326-8117f0edd167/bucket/10d7a1e2-3ec2-42ed-93c7-b87b16292a06.png"
+                alt="Факультет физической культуры и спорта"
+                className="h-16 object-contain"
+              />
+            </div>
+            <p className="text-sm text-background/70">Сайт создан при поддержке факультета физической культуры и спорта</p>
+          </div>
+          <div className="text-center text-sm text-background/70 space-y-2">
+            <p>&copy; 2025 Мы — Будущее Поколение Страны. Все права защищены.</p>
+            <p>Разработчики: Назарова Евгения, Шапкина Мария, Чугунова Дарья, Ерохин Егор, Степанов Андрей</p>
+          </div>
         </div>
       </div>
     </footer>
