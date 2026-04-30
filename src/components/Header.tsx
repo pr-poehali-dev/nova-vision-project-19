@@ -14,7 +14,7 @@ export function Header() {
           <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
             <Icon name="Shield" size={18} className="text-accent-foreground" />
           </div>
-          <span className="font-semibold text-foreground">БоевойРезерв</span>
+          <span className="font-semibold text-foreground">Мы — Будущее Поколение Страны</span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition">

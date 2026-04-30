@@ -6,9 +6,9 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold">Б</span>
+                <span className="text-accent-foreground font-bold">М</span>
               </div>
-              <span className="font-semibold">БоевойРезерв</span>
+              <span className="font-semibold">Мы — Будущее Поколение Страны</span>
             </div>
             <p className="text-sm text-background/70">ИИ-платформа персональных тренировок с военной подготовкой для школьников.</p>
           </div>
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70">
-          <p>&copy; 2025 БоевойРезерв. Все права защищены.</p>
+          <p>&copy; 2025 Мы — Будущее Поколение Страны. Все права защищены.</p>
         </div>
       </div>
     </footer>
